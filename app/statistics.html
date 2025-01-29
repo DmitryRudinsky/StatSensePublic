@@ -1,0 +1,87 @@
+<!doctype html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="css/styles.min.css">
+    <link rel="icon" href="favicon.PNG" type="image/x-icon">
+    <title>Статистика</title>
+</head>
+<body id="statisticsPage">
+<main class="main">
+    <section class="dashboard dashboard__statistics" id="dashboard">
+        <div class="logo-container">
+            <img alt="logo" class="icon-logo" src="img/logo.PNG">
+        </div>
+        <nav class="dashboard__nav">
+            <ul class="dashboard__list">
+                <li class="dashboard__list-elem profile">
+                    <a class="dashboard__list-link">Профиль</a>
+                </li>
+                <li class="dashboard__list-elem statistics active">
+                    <a class="dashboard__list-link">Ваша статистика</a>
+                </li>
+                <li class="dashboard__list-elem about">
+                    <a class="dashboard__list-link">О нас</a>
+                </li>
+            </ul>
+        </nav>
+        <div class="exit">
+            <button class="exit__btn">Выход</button>
+            <img src="img/exit.svg" alt="exit" class="exit__icon">
+        </div>
+    </section>
+    <div id="modalBackdrop" class="modal-backdrop">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h3>Добавить статистику</h3>
+                <span class="close-modal">&times;</span>
+            </div>
+            <div class="modal-body">
+                <div class="input-group">
+                    <label>Название:</label>
+                    <input type="text" id="titleInput">
+                </div>
+                <div class="input-group">
+                    <label>Текущее значение:</label>
+                    <input type="number" id="currentValueInput">
+                </div>
+                <div class="input-group">
+                    <label>Необходимое значение:</label>
+                    <input type="number" id="necessaryValueInput">
+                </div>
+            </div>
+            <div class="modal-footer">
+                <button id="saveStatistics">Сохранить</button>
+            </div>
+        </div>
+    </div>
+    <button class="burger__button" id="open-burger">
+        <img src="img/burger.svg" alt="burger" class="burger__logo">
+    </button>
+    <section class="mainContent">
+        <div class="container">
+            <div class="mainContent__inner statistics__inner" id="animatedProfile">
+                <div class="logo-container-statistics">
+                    <img alt="logo" class="icon-logo__statistics" src="img/logo.PNG">
+                </div>
+                <div class="mainContent__text mainContent__text-statistics">
+                    <h4 class="mainContent__subTitle visible" id="animatedSubTitle">
+                        Ваша статистика
+                    </h4>
+                </div>
+                <div class="progressBars__inner" id="progressBars"></div>
+            </div>
+            <div class="add__statistics-container">
+                <button id="add__statistics">
+                    <img src="img/plus.svg" alt="plus">
+                </button>
+            </div>
+        </div>
+    </section>
+</main>
+<script type="module" src="js/main.min.js"></script>
+</body>
+</html>

@@ -1,0 +1,40 @@
+@import "./vars.module";
+
+* {
+  margin: 0;
+}
+
+html,
+body {
+  height: 100%;
+}
+
+body {
+  font-size: 20px;
+  line-height: 32px;
+  font-family: Montserrat, 'Open Sans', sans-serif;
+  font-optical-sizing: auto;
+  font-weight: 400;
+  font-style: normal;
+}
+
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 15px;
+}
+
+a {
+  line-height: 28px;
+  text-decoration: none;
+  color: #000000;
+}
+
+ul {
+  list-style: none;
+  padding: 0;
+}
+
+button {
+  font-family: Montserrat, "Open Sans", sans-serif;
+}

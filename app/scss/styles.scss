@@ -1,0 +1,500 @@
+@import "./vars.module";
+@import "./global.module";
+@import "./keyframes.module";
+
+.main {
+  display: flex;
+  height: 100%;
+}
+
+.dashboard {
+  width: 15%;
+  background-color: $dashBoardBG;
+  box-sizing: border-box;
+  padding: 40px;
+  color: #ffffff;
+  font-size: 20px;
+  line-height: 24px;
+  position: relative;
+
+  &__list {
+    display: flex;
+    flex-direction: column;
+
+    &-elem {
+      padding: 25px 10px;
+      position: relative;
+      transition: all 0.3s;
+      cursor: pointer;
+
+      &.active{
+        background-color: $dashBoardBGLight;
+      }
+
+      &::before {
+        content: "";
+        width: 20px;
+        height: 20px;
+        position: absolute;
+        left: -30px;
+        top: 28px;
+        background-repeat: no-repeat;
+      }
+
+      &:hover {
+        background-color: $dashBoardBGLight;
+
+        .dashboard__list-link {
+          padding-left: 10px;
+        }
+      }
+    }
+
+    &-elem.profile::before {
+      background-image: url("../img/profile-icon.svg");
+    }
+
+    &-elem.statistics::before {
+      background-image: url("../img/stats-icon.svg");
+    }
+
+    &-elem.settings::before {
+      background-image: url("../img/settings-icon.svg");
+    }
+
+    &-elem.about::before {
+      background-image: url("../img/about-icon.svg");
+    }
+
+    &-link {
+      color: #ffffff;
+      transition: all 0.3s;
+    }
+  }
+
+  &__statistics{
+    position: fixed;
+    height: 100vh;
+  }
+}
+
+.logo-container, .logo-container-statistics {
+  text-align: center;
+}
+
+.icon-logo {
+  width: 35%;
+  margin-bottom: 30px;
+  &__main{
+    display: none;
+  }
+  &__about{
+    margin-bottom: 50px;
+  }
+  &__statistics{
+    margin-bottom: 10px;
+    width: 10%;
+  }
+}
+
+.exit {
+  position: absolute;
+  bottom: 10px;
+
+  &__btn {
+    cursor: pointer;
+    background: none;
+    border: none;
+    color: #ffffff;
+    font-size: 20px;
+  }
+
+  &__icon {
+    position: absolute;
+    bottom: 1px;
+  }
+}
+
+
+.mainContent {
+  flex: 1;
+  background-color: #ffffff;
+  box-sizing: border-box;
+  padding: 20px;
+
+  &__inner {
+    padding-top: 100px;
+
+    transition: opacity 1s ease, transform 1s ease;
+    &.profile__inner,
+    &.about__inner,
+    &.statistics__inner{
+      transform: translateY(20px);
+      padding-top: 25px;
+      opacity: 0;
+      padding-bottom: 50px;
+    }
+  }
+
+  &__text{
+    text-align: center;
+    padding-bottom: 120px;
+  }
+
+  &__title {
+    font-size: 48px;
+    opacity: 0;
+    transform: translateY(20px);
+    transition: opacity 1s ease, transform 1s ease;
+    margin-bottom: 40px;
+
+    span {
+      color: $dashBoardBG;
+    }
+  }
+
+  &__subTitle {
+    font-size: 32px;
+    font-weight: 600;
+    opacity: 0;
+    transform: translateY(20px);
+    transition: opacity 1s ease, transform 1s ease;
+  }
+
+  &__form{
+    opacity: 0;
+    transform: translateY(20px);
+    transition: opacity 1s ease, transform 1s ease;
+    &-formControl{
+      display: flex;
+      flex-direction: column;
+    }
+    &-label{
+      margin-bottom: 5px;
+    }
+    &-input, &-select{
+      font-size: 24px;
+      margin-bottom: 10px;
+      padding: 10px 15px;
+      border-radius: 8px;
+    }
+    &-buttonContainer{
+      margin-top: 50px;
+      display: block;
+      text-align: center;
+    }
+    &-button{
+      padding: 8px 16px;
+      border-radius: 8px;
+      border: none;
+      background-color: $dashBoardBG;
+      color: #ffffff;
+      font-size: 24px;
+    }
+  }
+
+  &__title.visible, &__subTitle.visible, &__form.visible, .mainContent__inner.visible {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.emptyField{
+  border-color: $errorColor;
+}
+
+.error-message {
+  color: $errorColor;
+  font-size: 12px;
+  transition: all 0.3s;
+}
+
+.notice{
+  color: $errorColor;
+  position: absolute;
+  top: 0;
+  right: 0;
+  padding: 0 50px;
+  display: flex;
+  height: 100px;
+  align-items: center;
+  box-shadow: -2px 2px 10px 0px;
+  transform: translateX(375px);
+  transition: all 0.3s ease-out;
+}
+
+.notice.show-notice {
+  animation: slideIn 0.5s ease-out;
+  transform: translateX(0px);
+}
+
+.text__info{
+  margin-bottom: 25px;
+}
+
+.statistics__inner{
+  transform: translateX(155px) !important;
+}
+
+.progress-container {
+  background-color: #ffffff;
+  border-radius: 8px;
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  &__title{
+    margin-top: 75px;
+    text-align: center;
+    padding: 0 10px;
+  }
+  &__subTitle{
+    margin-bottom: 10px;
+    padding: 0 10px;
+  }
+}
+
+.progress-svg {
+  transform: rotate(-90deg);
+}
+
+.progress-bg, .progress-bar {
+  fill: none;
+  stroke-width: 5;
+  width: 100px;
+}
+
+.progress-bg {
+  stroke: #e6e6e6;
+}
+
+.progress-bar {
+  stroke: $dashBoardBG;
+  stroke-linecap: round;
+  stroke-dasharray: 283;
+  stroke-dashoffset: 283;
+  transition: stroke-dashoffset 0.3s ease;
+}
+
+.progress-text {
+  position: absolute;
+  top: 65%;
+  left: 48%;
+  font-size: 1.5rem;
+  font-weight: bold;
+  color: $dashBoardBG;
+}
+
+.progressBars__inner{
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 40px
+}
+
+.buttonBlock{
+  margin-bottom: 25px;
+}
+
+#minusButton,
+#plusButton{
+  color: #ffffff;
+  border: none;
+  background-color: $dashBoardBG;
+  padding: 10px;
+  border-radius: 8px;
+}
+
+#minusButton{
+  margin-right: 20px;
+}
+
+#plusButton{
+  margin-left: 20px;
+}
+
+#inputNumber{
+  padding: 10px;
+  border-radius: 8px;
+  border-color: #333333;
+}
+
+.switch {
+  display: inline-block;
+  height: 34px;
+  position: relative;
+  width: 60px;
+  cursor: pointer;
+}
+
+.switch input {
+  display:none;
+}
+
+.slider {
+  background-color: #ccc;
+  bottom: 0;
+  cursor: pointer;
+  left: 0;
+  position: absolute;
+  right: 0;
+  top: 0;
+  transition: .4s;
+}
+
+.slider:before {
+  background-color: #fff;
+  bottom: 4px;
+  content: "";
+  height: 26px;
+  left: 4px;
+  position: absolute;
+  transition: .4s;
+  width: 26px;
+}
+
+input:checked + .slider {
+  background-color: $dashBoardBG;
+}
+
+input:checked + .slider:before {
+  transform: translateX(26px);
+}
+
+.slider.round {
+  border-radius: 34px;
+}
+
+.slider.round:before {
+  border-radius: 50%;
+}
+
+.checkboxContainer{
+  display: flex;
+  &:first-child{
+    margin-bottom: 15px;
+  }
+}
+
+.checkBox__text{
+  margin-left: 15px;
+}
+
+@keyframes rotate {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+.animated {
+  animation: rotate 2s linear infinite;
+}
+
+.progress-container__title,
+.progress-container__subTitle,
+.buttonBlock,
+.checkboxContainerAnimated,
+.progress-svg,
+.progress-text{
+  transition: all 0.2s;
+}
+
+#add__statistics {
+  position: fixed;
+  right: 20px;
+  bottom: 50px;
+  border: none;
+  background: none;
+  z-index: 1000;
+  cursor: pointer;
+  transition: all 0.2s;
+  &:hover{
+    transform: translateY(-10px);
+  }
+}
+
+.modal-backdrop {
+  display: none;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0,0,0,0.5);
+  z-index: 1000;
+  justify-content: center;
+  align-items: center;
+}
+
+.modal-content {
+  background: white;
+  padding: 20px;
+  border-radius: 8px;
+  width: 300px;
+}
+
+.modal-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 15px;
+}
+
+.close-modal {
+  cursor: pointer;
+  font-size: 24px;
+}
+
+.input-group {
+  margin-bottom: 15px;
+}
+
+.input-group label {
+  display: block;
+  margin-bottom: 5px;
+}
+
+.input-group input {
+  width: 90%;
+  padding: 8px;
+  border: 1px solid #ddd;
+  border-radius: 4px;
+}
+
+.modal-footer {
+  text-align: right;
+  margin-top: 15px;
+}
+
+#saveStatistics {
+  background: $dashBoardBG;
+  color: white;
+  border: none;
+  padding: 8px 16px;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+.delete__statistics{
+  position: absolute;
+  top: 0;
+  right: 0;
+  border: none;
+  background: none;
+  cursor: pointer;
+}
+
+.burger{
+  &__button{
+    cursor: pointer;
+    border: none;
+    background: none;
+    display: none;
+  }
+}
+
+
+@import "media.module";

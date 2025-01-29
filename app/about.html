@@ -1,0 +1,61 @@
+<!doctype html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="css/styles.min.css">
+    <link rel="icon" href="favicon.PNG" type="image/x-icon">
+    <title>О нас</title>
+</head>
+<body id="aboutPage">
+<main class="main">
+    <section class="dashboard" id="dashboard">
+        <div class="logo-container">
+            <img alt="logo" class="icon-logo" src="img/logo.PNG">
+        </div>
+        <nav class="dashboard__nav">
+            <ul class="dashboard__list">
+                <li class="dashboard__list-elem profile">
+                    <a class="dashboard__list-link">Профиль</a>
+                </li>
+                <li class="dashboard__list-elem statistics">
+                    <a class="dashboard__list-link">Ваша статистика</a>
+                </li>
+                <li class="dashboard__list-elem about active">
+                    <a class="dashboard__list-link">О нас</a>
+                </li>
+            </ul>
+        </nav>
+        <div class="exit">
+            <button class="exit__btn">Выход</button>
+            <img src="img/exit.svg" alt="exit" class="exit__icon">
+        </div>
+    </section>
+    <button class="burger__button" id="open-burger">
+        <img src="img/burger.svg" alt="burger" class="burger__logo">
+    </button>
+    <section class="mainContent">
+        <div class="container">
+            <div class="mainContent__inner about__inner" id="animatedAbout">
+                <div class="logo-container">
+                    <img alt="logo" class="icon-logo__about" src="img/logo.PNG">
+                </div>
+                <div class="mainContent__text">
+                    <h1 class="mainContent__title visible" id="animatedTitle">Мы - команда <span>StatSense!</span>
+                    </h1>
+                    <h4 class="mainContent__subTitle visible" id="animatedSubTitle">Хотим рассказать немного о нас</h4>
+                </div>
+                <div class="mainContent__info">
+                    <p class="text__info">Мы — команда, создающая инновационные решения для удобного анализа данных. Наше веб-приложение позволяет визуализировать любую статистику в понятной и наглядной форме. С помощью графиков, диаграмм и progress bar вы сможете легко отслеживать динамику показателей, выявлять тренды и принимать обоснованные решения.</p>
+                    <p class="text__info">Наша миссия — сделать работу с данными доступной для каждого. Независимо от сферы вашей деятельности, наше приложение помогает превращать сложные цифры в простой и удобный инструмент для управления проектами, отслеживания успехов и контроля за процессами.</p>
+                    <p class="text__info">С нами ваш бизнес станет прозрачнее, а результаты — очевиднее. Визуализируйте данные, вдохновляйтесь результатами, достигайте целей!</p>
+                </div>
+            </div>
+        </div>
+    </section>
+</main>
+<script type="module" src="js/main.min.js"></script>
+</body>
+</html>
